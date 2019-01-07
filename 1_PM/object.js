@@ -3,5 +3,16 @@
 // HINT: recursion may help here
 
 const hasFalsyValue = obj => {
+  if(!obj){
+    return true;
+  }
+  for(vals of Object.values(obj)){
+    return hasFalsyValue(vals);
+  }
   return false;
 };
+
+console.log(hasFalsyValue(obj = false ));
+obj =  {name: false, num: 15};
+console.log(hasFalsyValue(obj));
+

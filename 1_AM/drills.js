@@ -51,12 +51,17 @@ const unzip = arr => {
   let arr1 = [];
   let arr2 = [];
   for(let i = 0; i < arr.length; i++){
+    arr1[i] = arr[i][0];
+    arr2[i] = arr[i][1];
   }
+  return "[" + arr1 + "], [" + arr2 + "]";
 };
 
 const shiftRight = (str, num) => {
   // TODO - write a function which shifts a string `num` characters to the right
   // Example = shiftThree("Hello") === "lloHe"
+  let shift = "";
+  shift = str[num - 1 , str.length - 1] + str[0, num]
 };
 
 const announceDate = () => {
@@ -75,3 +80,4 @@ console.log(tokenize("hello this is a test"));
 console.log(uniqueOnes([1,1,2,4,3,3,11,5,6,2]));
 console.log(factorial(5));
 console.log(zip([1, 2, 3], [5, 3, 1]));
+console.log(unzip([[1, 5], [2, 3], [3, 1]]));
